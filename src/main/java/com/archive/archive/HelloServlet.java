@@ -18,8 +18,8 @@ public class HelloServlet extends HttpServlet {
         message = "Hello World!";
     }
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+//
 
-//        l want to return a json object
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
         try{
