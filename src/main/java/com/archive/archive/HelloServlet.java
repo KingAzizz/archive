@@ -15,7 +15,14 @@ public class HelloServlet extends HttpServlet {
     public HelloServlet() {
     }
     public void init() {
-        message = "Hello World!";
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+//        Class.forName("com.mysql.cj.jdbc.Driver");
+//        Class.forName("com.mysql.cj.jdbc.Driver");
+
     }
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 //
